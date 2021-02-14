@@ -375,7 +375,7 @@ namespace Ogre {
 
             // register class and create window
             WNDCLASS wc = { classStyle, windowProc, 0, 0, hInst,
-                LoadIcon(NULL, IDI_APPLICATION), LoadCursor(NULL, IDC_ARROW),
+                LoadIcon(NULL, IDI_APPLICATION), NULL,
                 (HBRUSH)GetStockObject(BLACK_BRUSH), NULL, "OgreGLWindow" };
             RegisterClass(&wc);
 

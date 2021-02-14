@@ -122,6 +122,11 @@ namespace Ogre {
         mRenderSystem->_getStateCacheManager()->setTexParameteri(texTarget, GL_TEXTURE_BASE_LEVEL, 0);
         mRenderSystem->_getStateCacheManager()->setTexParameteri(texTarget, GL_TEXTURE_MAX_LEVEL, mNumMipmaps);
 
+        // Custom render settings:
+        mRenderSystem->_getStateCacheManager()->setTexParameteri(texTarget, GL_TEXTURE_LOD_BIAS, -1);
+        mRenderSystem->_getStateCacheManager()->setTexParameteri(texTarget, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+        mRenderSystem->_getStateCacheManager()->setTexParameteri(texTarget, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+
         // Set up texture swizzling.
         typedef std::array<GLint, 4> SwizzleMask;
         SwizzleMask swizzleMask;
